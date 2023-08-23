@@ -1,0 +1,17 @@
+.footer-section {
+  padding: 50px 0;
+  background-color: map-get($map: $colors, $key: lightWhite);
+
+  &__copyright {
+    color: map-get($map: $colors, $key: borderColor);
+    font-size: 12px;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  @at-root {
+    @include responsive(560px) {
+      .footer-section { padding: 20px 0; }
+    }
+  }
+}

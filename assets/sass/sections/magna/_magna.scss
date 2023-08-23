@@ -1,0 +1,72 @@
+.magna-section {
+  padding: 70px 0 65px;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__content {
+    width: 50%;
+    margin-right: 5%;
+
+    & .info { margin-top: 40px; }
+    & .learn-btn { margin-top: 30px; }
+  }
+
+  &__list {
+    width: 50%;
+    padding: 10px 0 10px 4%;
+    border-left: 1px solid map-get($map: $colors, $key: lightGray);
+
+    & li {
+      width: 100%;
+      margin-bottom: 35px;
+      color: map-get($map: $colors, $key: gray);
+      font-size: 12px;
+      
+      &:last-child { margin-bottom: 0; }
+
+      &::before {
+        content: "\f00c";
+        padding-right: 2.25%;
+        color: #43ae80;
+        font-family: "FontAwesome";
+        font-size: 14px;
+        font-weight: 600;
+        float: left;
+        text-indent: 0;
+      }
+    }
+  }
+
+  @at-root {
+    @include responsive(768px) {
+      &__container { flex-direction: column; }
+  
+      &__content { 
+        width: 100%; 
+        margin: 0;
+      }
+  
+      &__list {
+        width: 100%;
+        padding: 20px 0;
+        border: none;
+        border-top: 1px solid map-get($map: $colors, $key: lightGray);
+        margin-top: 40px;
+      }
+    }
+  
+    @include responsive(560px) {
+      .magna-section { padding: 50px 0; }
+      &__content .info, &__content .learn-btn { margin-top: 20px; }
+
+      &__list {
+        margin-top: 20px;
+
+        & li { margin-bottom: 25px; }
+      }
+    }
+  }
+}

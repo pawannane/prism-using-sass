@@ -1,0 +1,52 @@
+.banner-section {
+  padding: 186px 0 86px;
+  background: linear-gradient(to right, map-get($colors, lightPurple), map-get($colors, purple));
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+
+  }
+
+  &__heading {
+    margin-right: 5%;
+    color: map-get($colors, white);
+    font-size: 30px;
+    @include fontWeight;
+    line-height: 1.5;
+  }
+
+  &__content {
+    padding: 0 4%;
+    border-left: 1px solid map-get($colors, lightGray);
+
+    & .start-btn { margin-top: 25px; }
+  }
+
+  &__info {
+    color: map-get($colors, lightGray);
+    font-size: 14px;
+    @include fontWeight;
+    line-height: 1.5;
+  }
+
+  
+  @at-root {
+    @include responsive(768px) {
+      &__container { flex-direction: column; }
+      &__heading { margin: 0; }
+  
+      &__content {
+        padding: 20px 0;
+        border: none;
+        border-top: 1px solid map-get($map: $colors, $key: lightGray);
+        margin-top: 20px;
+      }
+    }
+
+    @include responsive(560px) {
+      .banner-section { padding: 50px 0; }
+      &__heading { font-size: 24px; }
+    }
+  }
+}

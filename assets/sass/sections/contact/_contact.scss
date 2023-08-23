@@ -1,0 +1,116 @@
+.contact-section {
+  padding: 65px 0;
+
+  &__container {
+    display: flex;
+  }
+
+  &__form-container {
+    width: 50%;
+    margin-right: 5%;
+
+    & .info { margin-top: 38px; }
+
+  }
+
+  &__form {
+    margin-top: 30px;
+
+    & .input-field {
+      width: 45%;
+      display: inline-block;
+
+      &:first-child { margin-right: 8%; }
+
+      & input { 
+        width: 100%;
+        padding: 10px 5%;
+        border: 1px solid map-get($map: $colors, $key: cardBottom);
+      }
+    }
+
+    & .input-textarea textarea {
+      width: 100%;
+      padding: 10px 2.5%;
+      border: 1px solid map-get($map: $colors, $key: cardBottom);
+      margin-top: 28px;
+    }
+
+    & .submit-btn { margin-top: 25px; }
+  }
+
+  &__social-links {
+    width: 50%;
+    padding-left: 4%;
+    border-left: 1px solid map-get($map: $colors, $key: lightGray);
+
+    & li {
+      width: 100%;
+      margin-bottom: 25px;
+
+      &:last-child { margin-bottom: 0; }
+
+      & a {
+        width: 60%;
+        display: flex;
+        color: map-get($map: $colors, $key: gray);
+        font-size: 12px;
+
+        &::before {
+          padding-right: 5%;
+          color: #43ae80;
+          font-family: "FontAwesome";
+          float: left;
+          text-indent: 0;
+        }
+      }
+
+      & .twitter::before { content: "\f099"; }
+      & .facebook::before { content: "\f39e"; }
+      & .instagram::before { content: "\f099"; }
+      & .email::before { content: "\f16d"; }
+      & .home::before { content: "\f0e0"; }
+    }
+  }
+  @at-root {
+    @include responsive(995px) {
+      &__social-links {
+        .contact-section & a { width: 100%;}
+      }
+    }
+
+    @include responsive(768px) {
+      &__container { flex-direction: column; }
+  
+      &__form-container {
+        width: 100%;
+        margin: 0;
+      }
+  
+      &__social-links {
+        width: 100%;
+        padding: 25px 0 0 0;
+        border: none;
+        border-top: 1px solid map-get($map: $colors, $key: lightGray);
+        margin-top: 25px;
+      }
+    }
+
+    @include responsive(560px) {
+      .contact-section { padding: 50px 0 20px; }
+      &__form-container .info { margin-top: 20px; }
+
+      &__form {
+        margin-top: 20px;
+        & .input-textarea textarea, .submit-btn { margin-top: 20px; }
+      }
+    }
+
+    @include responsive(375px) {
+      &__form .input-field { 
+        width: 100%; 
+        &:first-child { margin: 0 0 20px 0; }
+      }
+    }
+  }
+}
